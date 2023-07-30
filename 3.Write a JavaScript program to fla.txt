@@ -1,0 +1,39 @@
+3.Write a JavaScript program to flatten the array, ie, turns a deep array into a plain
+array.
+Note: Do not use array.flat();
+Sample Input:
+[ 1, 2, [ 3, 4, [ 5 ] ] ]
+Output:
+[ 1, 2, 3, 4, 5 ]
+
+
+ANS:
+
+function flattenArray(arr) {
+  const result = [];
+
+  function flattenHelper(arr) {
+    for (const element of arr) {
+      if (Array.isArray(element)) {
+        flattenHelper(element);
+      } else {
+        result.push(element);
+      }
+    }
+  }
+
+  flattenHelper(arr);
+  return result;
+}
+
+// Example usage with the provided sample input:
+const inputArray = [1, 2, [3, 4, [5]]];
+const flattenedArray = flattenArray(inputArray);
+console.log(flattenedArray);
+
+
+
+Sample Input:
+[ 1, 2, [ 3, 4, [ 5 ] ] ]
+
+OUTPUT:[ 1, 2, 3, 4, 5 ]

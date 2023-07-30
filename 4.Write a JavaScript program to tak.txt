@@ -1,0 +1,40 @@
+4.Write a JavaScript program to take an array as input from the user and:
+a) Store all duplicate elements in a separate array
+b) Remove the duplicate elements from the original array
+Sample Input:
+[ 1, 2, 3, 2, 3, 4, 5 ]
+Output:
+Duplicate Elements = [ 2, 3 ]
+Array without duplicate elements = [ 1, 2, 3, 4, 5 ]
+
+
+ANS:
+
+function removeAndStoreDuplicates(arr) {
+  const duplicateElements = [];
+  const uniqueElements = [];
+
+  for (const element of arr) {
+    if (!uniqueElements.includes(element)) {
+      uniqueElements.push(element);
+    } else {
+      if (!duplicateElements.includes(element)) {
+        duplicateElements.push(element);
+      }
+    }
+  }
+
+  console.log("Duplicate Elements =", duplicateElements);
+  console.log("Array without duplicate elements =", uniqueElements);
+}
+
+// Example usage with the provided input array:
+const inputArray = [1, 2, 2, 3, 4, 5, 7, 8];
+removeAndStoreDuplicates(inputArray);
+
+
+input:{1,2,2,3,4,5,7,8}
+
+output:
+Duplicate Elements = [ 2, 3 ]
+Array without duplicate elements = [ 1, 2, 3, 4, 5 ]

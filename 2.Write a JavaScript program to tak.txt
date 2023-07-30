@@ -1,0 +1,71 @@
+2.Write a JavaScript program to take 2 arrays from the user and check if the
+number 4 exists in any of the arrays, or both of the arrays.
+Sample Input 1:
+[ 1, 2, 3, 4, 5 ]
+[ 4, 6, 1, 8, 2 ]
+Output:
+
+4 in both arrays
+Sample Input 2:
+[ 1, 2, 3, 6, 5 ]
+[ 4, 6, 1, 8, 2 ]
+Output:
+4 in array 2
+Sample Input 3:
+[ 1, 2, 3, 4, 5 ]
+[ 5, 6, 1, 8, 2 ]
+Output:
+4 in array 1
+
+
+
+
+ANS:
+
+
+function checkNumberInArrays(arr1, arr2) {
+  const check4InArray = (arr) => arr.includes(4);
+
+  const is4InArray1 = check4InArray(arr1);
+  const is4InArray2 = check4InArray(arr2);
+
+  if (is4InArray1 && is4InArray2) {
+    console.log("4 in both arrays");
+  } else if (is4InArray1) {
+    console.log("4 in array 1");
+  } else if (is4InArray2) {
+    console.log("4 in array 2");
+  } else {
+    console.log("4 not found in any array");
+  }
+}
+
+// Example usage with the provided sample inputs:
+const inputArray1 = prompt("Enter the first array of numbers separated by commas:").split(",").map(Number);
+const inputArray2 = prompt("Enter the second array of numbers separated by commas:").split(",").map(Number);
+checkNumberInArrays(inputArray1, inputArray2);
+
+
+
+
+Sample Input 1:
+[ 1, 2, 3, 4, 5 ]
+[ 4, 6, 1, 8, 2 ]
+ 
+OUTPUT:4 in both arrays
+
+
+Sample Input 2:
+[ 1, 2, 3, 6, 5 ]
+[ 4, 6, 1, 8, 2 ]
+
+OUTPUT:4 in array 2
+
+
+
+Sample Input 3:
+[ 1, 2, 3, 4, 5 ]
+[ 5, 6, 1, 8, 2 ]
+
+
+OUTPUT:4 in array 1
